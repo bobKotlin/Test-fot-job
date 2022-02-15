@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.bsuesi.testforwork.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_webViewFragment2"
+            app:destination="@id/webViewFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment2"
+        android:name="com.bsuesi.testforwork.ui.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="myArg"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_webViewFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" >
+            <argument
+                android:name="myArg"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
+    </fragment>
+</navigation>
